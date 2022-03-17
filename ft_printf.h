@@ -1,0 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/17 09:14:13 by xel               #+#    #+#             */
+/*   Updated: 2022/03/17 11:50:21 by xel              ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include <stdio.h>
+
+int		ft_printf(const char *str, ...);
+int		ft_call_function(const char c, va_list args);
+int		ft_check_ifprint(const char c);
+int 	ft_print_c(va_list args);
+int		ft_print_s(va_list args);
+int		ft_print_d(va_list args);
+int		ft_print_x(va_list args);
+int		ft_print_X(va_list args);
+
+//utils
+void	ft_putchar(const char c);
+int		ft_putstr(char *str);
+void	ft_putnbr_base_min(int nbr);
+void	ft_putnbr_base_maj(int nbr);
+
+#endif
