@@ -98,6 +98,25 @@ int	ft_len_num(int nb)
 	return (count);
 }
 
+int	ft_base_len(int nb)
+{
+	size_t	count;
+
+	count = 0;
+	if (nb < 0)
+	{
+		nb *= -1;
+		count++;
+	}
+	while (nb > 0)
+	{
+		nb /= 16;
+		count++;
+	}
+	return (count);
+}
+
+
 // other
 
 int ft_print_c(va_list args)
@@ -117,6 +136,26 @@ int ft_print_s(va_list args)
 	return (ft_putstr(str));
 }
 
+int ft_print_p(va_list args)
+{
+	int	ptr;
+
+	ptr = *(int *)va_arg(args, void *);
+	ft_putnbr_base_maj(ptr);
+	return (ft_base_len(ptr));
+}
+
+/*
+int ft_print_d(va_list args)
+{
+	float	nb;
+
+	nb = (float)va_arg(args, float);
+	ft_putnbr_float(nb);
+
+}
+*/
+
 int ft_print_i(va_list args)
 {
 	int nb;
@@ -132,6 +171,7 @@ int ft_print_x(va_list args)
 
 	nb = (int)va_arg(args, int);
 	ft_putnbr_base_min(nb);
+	return (ft_base_len(nb));
 }
 
 int ft_print_X(va_list args)
@@ -140,4 +180,5 @@ int ft_print_X(va_list args)
 
 	nb = (int)va_arg(args, int);
 	ft_putnbr_base_maj(nb);
+	return (ft_base_len(nb));
 }

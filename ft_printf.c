@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/17 12:06:37 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/17 21:37:54 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,17 @@ int	ft_call_function(const char c, va_list args)
 	sum = 0;
 	if (c == 'c')
 		sum = ft_print_c(args);
-	if (c == 's')
+	else if (c == 's')
 		sum = ft_print_s(args);
-	if (c == 'i')
+	else if (c == 'p')
+		sum = ft_print_p(args);
+	//else if (c == 'd')
+	//	sum = ft_print_d(args);
+	else if (c == 'i')
 		sum = ft_print_i(args);
-	if (c == 'x')
+	else if (c == 'x')
 		sum = ft_print_x(args);
-	if (c == 'X')
+	else if (c == 'X')
 		sum = ft_print_X(args);
 	return (sum);
 }
@@ -78,6 +82,7 @@ int	ft_printf(const char *str, ...)
 
 int		main()
 {
+	int	var = 10;
 	int		ret;
 	ft_printf("voici un pourcent suivie d'un | : %|\n");
 	ft_printf("voici un double pourcent : %%\n");
@@ -86,7 +91,7 @@ int		main()
 	ft_printf("voici un int entier : %i\n", 15);
 	ft_printf("voici 42 en base 16 minuscule : %x\n", 42);
 	ft_printf("voici 42 en base 16 majuscule : %X\n", 42);
-
+	
 	printf("\n\n-----VALEUR DE RETOUR-----\n\n");
 	ret = ft_printf("char : %c\n", 'c');
 	printf("%d\n", ret);
@@ -94,7 +99,11 @@ int		main()
 	printf("%d\n", ret);
 	ret = ft_printf("int : %i\n", 42);
 	printf("%d\n", ret);
-	ret = ft_printf("int base min : %i\n", 42);
+	ret = ft_printf("int base min: %x\n", 234234);
 	printf("%d\n", ret);
-	
+	ret = ft_printf("int base maj: %X\n", 234234);
+	printf("%d\n", ret);
+	ret = ft_printf("pointeur: %X\n", &var);
+	printf("%p\n", &var);
+	printf("%d\n", ret);
 }
