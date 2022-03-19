@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:18:37 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/19 19:22:51 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	ft_call_function(const char c, va_list args)
 	else if (c == 'x')
 		sum = ft_print_x(args);
 	else if (c == 'X')
-		sum = ft_print_X(args);
+		sum = ft_print_x_caps(args);
 	return (sum);
 }
 
