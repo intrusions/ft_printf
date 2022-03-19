@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 17:17:46 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/19 18:06:30 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	ft_printf(const char *str, ...)
 }
 
 //main
-
+/*
 int		main()
 {
 	int		var = 10;
@@ -109,4 +109,7 @@ int		main()
 	printf("%d\n", ret);
 	ret = ft_printf("nombre decimal : %d\n", 1422.1111);
 	printf("%d\n", ret);
-}
+	ret = ft_printf("nombre decimal non signer : %u\n", -4);
+	printf("%d\n", ret);
+	printf("chelou le %u\n", -4);
+}*/

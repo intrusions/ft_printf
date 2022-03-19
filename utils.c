@@ -37,6 +37,25 @@ void	ft_putnbr(int n)
 		ft_putchar(nbr + 48);
 }
 
+void	ft_putnbr_u(unsigned int n)
+{
+	long long	nbr;
+
+	nbr = n;
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nbr *= -1;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else
+		ft_putchar(nbr + 48);
+}
+
 
 void	ft_putnbr_base_min(int nbr)
 {
@@ -104,6 +123,19 @@ int	ft_len_num(int nb)
 		nb *= -1;
 		count++;
 	}
+	while (nb > 0)
+	{
+		nb /= 10;
+		count++;
+	}
+	return (count);
+}
+
+int	ft_len_num_u(unsigned int nb)
+{
+	size_t	count;
+
+	count = 0;
 	while (nb > 0)
 	{
 		nb /= 10;
@@ -198,16 +230,12 @@ int ft_print_i(va_list args)
 
 int ft_print_u(va_list args)
 {
-	unsigned double nb;
+	unsigned int nb;
 
-	nb = (unsigned double)va_arg(args, unsigned double);
-	count = ft_len_num((int)nb);
+	nb = (unsigned int)va_arg(args, unsigned int);
 
-	ft_putnbr((int)nb);
-	ft_putchar('.');
-	nb *= 1000000;
-	ft_putnbr((int)nb % 1000000);
-	return(count + 7);
+	ft_putnbr_u(nb);
+	return(ft_len_num_u(nb));
 }
 
 int ft_print_x(va_list args)
