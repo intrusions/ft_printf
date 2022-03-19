@@ -1,10 +1,12 @@
-SRCS		=	ft_printf.c ft_print_c.c ft_print_s.c
+SRCS		=	srcs/ft_print_c.c srcs/ft_print_s.c srcs/ft_print_p.c srcs/ft_print_s.c \
+				srcs/ft_print_i.c srcs/ft_print_u.c srcs/ft_print_x.c srcs/ft_print_X.c \
+				srcs/utils.c ft_printf.c
 OBJS		=	$(SRCS:.c=.o)
-BONUS_OBJS	= $(BONUS:.c=.o)
+BONUS_OBJS	=	$(BONUS:.c=.o)
 CC			=	gcc
 RM			=	rm -f
-CFLAGS		= -I.
-NAME		= libftprintf.a
+CFLAGS		= 	-Wall -Wextra -Werror -I./includes
+NAME		= 	libftprintf.a
 
 all:		$(NAME)
 
@@ -18,8 +20,5 @@ fclean:		clean
 	$(RM) $(NAME)
 
 re:		fclean $(NAME)
-
-#bonus:                  $(OBJS) $(BONUS_OBJS)
-#								ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:		all clean fclean re bonus
