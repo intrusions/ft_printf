@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/17 21:37:54 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/19 17:17:46 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,12 @@ int	ft_call_function(const char c, va_list args)
 		sum = ft_print_s(args);
 	else if (c == 'p')
 		sum = ft_print_p(args);
-	//else if (c == 'd')
-	//	sum = ft_print_d(args);
+	else if (c == 'd')
+		sum = ft_print_d(args);
 	else if (c == 'i')
 		sum = ft_print_i(args);
+	else if (c == 'u')
+		sum = ft_print_u(args);
 	else if (c == 'x')
 		sum = ft_print_x(args);
 	else if (c == 'X')
@@ -82,7 +84,7 @@ int	ft_printf(const char *str, ...)
 
 int		main()
 {
-	int	var = 10;
+	int		var = 10;
 	int		ret;
 	ft_printf("voici un pourcent suivie d'un | : %|\n");
 	ft_printf("voici un double pourcent : %%\n");
@@ -103,7 +105,8 @@ int		main()
 	printf("%d\n", ret);
 	ret = ft_printf("int base maj: %X\n", 234234);
 	printf("%d\n", ret);
-	ret = ft_printf("pointeur: %X\n", &var);
-	printf("%p\n", &var);
+	ret = ft_printf("pointeur: %p\n", &var);
+	printf("%d\n", ret);
+	ret = ft_printf("nombre decimal : %d\n", 1422.1111);
 	printf("%d\n", ret);
 }

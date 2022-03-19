@@ -80,6 +80,20 @@ void	ft_putnbr_base_maj(int nbr)
 		write(1, &base[nb], 1);
 }
 
+void	ft_putnbr_base_ptr(unsigned long long int nb)
+{
+	char		*base;
+
+	base = "0123456789abcdef";
+	if (nb >= 16)
+	{
+		ft_putnbr_base_ptr(nb / 16);
+		write(1, &base[nb % 16], 1);
+	}
+	else
+		write(1, &base[nb], 1);
+}
+
 int	ft_len_num(int nb)
 {
 	size_t	count;
@@ -116,6 +130,18 @@ int	ft_base_len(int nb)
 	return (count);
 }
 
+int	ft_base_len_ptr(unsigned long long int nb)
+{
+	size_t	count;
+
+	count = 0;
+	while (nb > 0)
+	{
+		nb /= 16;
+		count++;
+	}
+	return (count);
+}
 
 // other
 
@@ -138,23 +164,28 @@ int ft_print_s(va_list args)
 
 int ft_print_p(va_list args)
 {
-	int	ptr;
+	unsigned long long int ptr;
 
-	ptr = *(int *)va_arg(args, void *);
-	ft_putnbr_base_maj(ptr);
-	return (ft_base_len(ptr));
+	ptr = (unsigned long long int)va_arg(args, void *);
+	ft_putstr("0x");
+	ft_putnbr_base_ptr(ptr);
+	return ((ft_base_len_ptr(ptr) + 2));
 }
 
-/*
+
 int ft_print_d(va_list args)
 {
-	float	nb;
+	double	nb;
+	int		count;
 
-	nb = (float)va_arg(args, float);
-	ft_putnbr_float(nb);
-
+	nb = (double)va_arg(args, double);
+	count = ft_len_num((int)nb);
+	ft_putnbr((int)(nb));
+	ft_putchar('.');
+	nb *= 1000000;
+	ft_putnbr((int)nb % 1000000);
+	return(count + 7);
 }
-*/
 
 int ft_print_i(va_list args)
 {
@@ -163,6 +194,20 @@ int ft_print_i(va_list args)
 	nb = (int)va_arg(args, int);
 	ft_putnbr(nb);
 	return (ft_len_num(nb));
+}
+
+int ft_print_u(va_list args)
+{
+	unsigned double nb;
+
+	nb = (unsigned double)va_arg(args, unsigned double);
+	count = ft_len_num((int)nb);
+
+	ft_putnbr((int)nb);
+	ft_putchar('.');
+	nb *= 1000000;
+	ft_putnbr((int)nb % 1000000);
+	return(count + 7);
 }
 
 int ft_print_x(va_list args)

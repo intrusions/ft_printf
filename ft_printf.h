@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:14:13 by xel               #+#    #+#             */
-/*   Updated: 2022/03/17 11:50:21 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/19 17:24:47 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ int		ft_call_function(const char c, va_list args);
 int		ft_check_ifprint(const char c);
 int 	ft_print_c(va_list args);
 int		ft_print_s(va_list args);
+int     ft_print_p(va_list args);
 int		ft_print_d(va_list args);
+int		ft_print_i(va_list args);
+int		ft_print_u(va_list args);
 int		ft_print_x(va_list args);
 int		ft_print_X(va_list args);
 
@@ -32,5 +35,7 @@ void	ft_putchar(const char c);
 int		ft_putstr(char *str);
 void	ft_putnbr_base_min(int nbr);
 void	ft_putnbr_base_maj(int nbr);
+void	ft_putnbr_base_ptr(unsigned long long int nb);
+int     ft_base_len_ptr(unsigned long long int nb);
 
 #endif
