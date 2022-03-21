@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:22:51 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/21 01:28:07 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_check_ifprint(const char c)
 	char	*accept;
 
 	i = 0;
-	accept = "cspdiuxX";
+	accept = "cspdiuxX%";
 	while (accept[i])
 	{
 		if (c == accept[i])
@@ -49,6 +49,8 @@ int	ft_call_function(const char c, va_list args)
 		sum = ft_print_x(args);
 	else if (c == 'X')
 		sum = ft_print_x_caps(args);
+	else if (c == '%')
+		sum = ft_print_percent();
 	return (sum);
 }
 

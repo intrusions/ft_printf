@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:45:03 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:03:27 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/19 20:05:29 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_putstr(const char *str)
 
 void	ft_putnbr(int n)
 {
-	long long	nbr;
+	long long int	nbr;
 
 	nbr = n;
 	if (nbr < 0)

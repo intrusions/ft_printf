@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:16:09 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:17:36 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/20 14:25:13 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_putnbr_u(unsigned int n)
 {
-	long long	nbr;
+	unsigned long long int	nbr;
 
 	nbr = n;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr *= -1;
-	}
 	if (nbr > 9)
 	{
 		ft_putnbr(nbr / 10);

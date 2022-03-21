@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:57:48 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:14:16 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/21 01:32:08 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,21 @@
 
 int	ft_len_num(int nb)
 {
-	size_t	count;
+	size_t			count;
+	long long int	nbr;
 
 	count = 0;
-	if (nb < 0)
+	nbr = nb;
+	if (nbr == 0)
+		return (1);
+	if (nbr < 0)
 	{
-		nb *= -1;
+		nbr *= -1;
 		count++;
 	}
-	while (nb > 0)
+	while (nbr > 0)
 	{
-		nb /= 10;
+		nbr /= 10;
 		count++;
 	}
 	return (count);
@@ -32,12 +36,16 @@ int	ft_len_num(int nb)
 
 int	ft_len_num_u(unsigned int nb)
 {
-	size_t	count;
+	size_t			count;
+	long long int	nbr;
 
 	count = 0;
-	while (nb > 0)
+	nbr = nb;
+	if (nbr == 0)
+		return (1);
+	while (nbr > 0)
 	{
-		nb /= 10;
+		nbr /= 10;
 		count++;
 	}
 	return (count);

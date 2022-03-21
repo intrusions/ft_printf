@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:14:13 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:19:27 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/21 01:32:24 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int		ft_print_i(va_list args);
 int		ft_print_u(va_list args);
 int		ft_print_x(va_list args);
 int		ft_print_x_caps(va_list args);
+int		ft_print_percent(void);
 
 //utils
 void	ft_putchar(char c);

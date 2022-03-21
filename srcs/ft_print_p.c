@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:13:38 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:17:49 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/19 20:01:36 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,15 @@ void	ft_putnbr_base_ptr(unsigned long long int nb)
 
 int	ft_print_p(va_list args)
 {
-	unsigned long long int	ptr;
+	unsigned long long int	addr;
 
-	ptr = (unsigned long long int)va_arg(args, void *);
-	ft_putstr("0x");
-	ft_putnbr_base_ptr(ptr);
-	return ((ft_base_len_ptr(ptr) + 2));
+	addr = (unsigned long long int)va_arg(args, void *);
+	if (addr)
+	{
+		ft_putstr("0x");
+		ft_putnbr_base_ptr(addr);
+		return ((ft_base_len_ptr(addr) + 2));
+	}
+	ft_putstr("(nil)");
+	return (5);
 }

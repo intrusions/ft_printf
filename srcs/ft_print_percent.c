@@ -1,45 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_x.c                                       :+:      :+:    :+:   */
+/*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 18:16:41 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 20:26:41 by xel              ###   ########.fr       */
+/*   Created: 2022/03/20 13:16:31 by xel               #+#    #+#             */
+/*   Updated: 2022/03/21 01:32:38 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	ft_putnbr_base_min(int nbr)
+int	ft_print_percent(void)
 {
-	long long	nb;
-	char		*base;
-
-	nb = nbr;
-	base = "0123456789abcdef";
-	if (nb < 0)
-		nb *= -1;
-	if (nb >= 16)
-	{
-		ft_putnbr_base_min(nb / 16);
-		write(1, &base[nb % 16], 1);
-	}
-	else
-		write(1, &base[nb], 1);
-}
-
-int	ft_print_x(va_list args)
-{
-	int	nb;
-
-	nb = (int)va_arg(args, int);
-	if (nb == 0)
-	{
-		ft_putchar('0');
-		return (1);
-	}
-	ft_putnbr_base_min(nb);
-	return (ft_base_len(nb));
+	ft_putchar('%');
+	return (1);
 }
