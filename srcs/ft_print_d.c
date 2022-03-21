@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:14:29 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 19:14:04 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/21 03:45:43 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ int	ft_print_d(va_list args)
 	ft_putnbr((int)(nb));
 	ft_putchar('.');
 	nb *= 1000000;
-	ft_putnbr((int)nb % 1000000);
+	if (nb < 0)
+		nb *= -1;
+	if ((int)nb % 1000000 == 0)
+		ft_putstr("000000");
+	else
+		ft_putnbr((int)nb % 1000000);
 	return (count + 7);
 }
