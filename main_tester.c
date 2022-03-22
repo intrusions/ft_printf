@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/21 04:14:24 by xel               #+#    #+#             */
-/*   Updated: 2022/03/21 04:32:31 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/21 18:08:08 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int	main()
 
 	//double
 	printf("--------------   double : d   --------------\n");
-	ret_my_function = ft_printf("ft_printf    : [%d,%d,%d,%d]\n", 10.5 , -10.5, 10.0, 0.0);
-	ret_reel_function = printf("real printf  : [%f,%f,%f,%f]\n", 10.5 , -10.5, 10.0, 0.0);
+	ret_my_function = ft_printf("ft_printf    : [%d,%d,%d,%d]\n", 10 , -10, 10, 0);
+	ret_reel_function = printf("real printf  : [%d,%d,%d,%d]\n", 10 , -10, 10, 0);
 	if (ret_reel_function == ret_my_function)
 		printf("return is ok : [%d,%d]\n\n",ret_my_function, ret_reel_function);
 	else
@@ -85,7 +85,7 @@ int	main()
 	//int convert to hexa in lowercase
 	printf("--------------   hexa lowercase : x   --------------\n");
 	ret_my_function = ft_printf("ft_printf    : [%x,%x,%x,%x,%x]\n", (int)-2147483648, (int)2147483647, 0, -42, 42);
-	ret_reel_function = printf("real printf  : [-80000000,%x,%x,-2a,%x]\n", (int)2147483647, 0, 42);
+	ret_reel_function = printf("real printf  : [%x,%x,%x,%x,%x]\n", (int)-2147483648, (int)2147483647, 0, -42, 42);
 	if (ret_reel_function == ret_my_function)
 		printf("return is ok : [%d,%d]\n\n",ret_my_function, ret_reel_function);
 	else
@@ -94,7 +94,7 @@ int	main()
 	//int convert to hexa in uppercase
 	printf("--------------   hexa uppercase : X   --------------\n");
 	ret_my_function = ft_printf("ft_printf    : [%X,%X,%X,%X,%X]\n", (int)-2147483648, (int)2147483647, 0, -42, 42);
-	ret_reel_function = printf("real printf  : [-80000000,%X,%X,-2A,%X]\n", (int)2147483647, 0, 42);
+	ret_reel_function = printf("real printf  : [%X,%X,%X,%X,%X]\n", (int)-2147483648, (int)2147483647, 0, -42, 42);
 	if (ret_reel_function == ret_my_function)
 		printf("return is ok : [%d,%d]\n\n",ret_my_function, ret_reel_function);
 	else
@@ -109,5 +109,6 @@ int	main()
 	else
 		printf("return is not ok : [%d,%d]\n\n", ret_my_function, ret_reel_function);
 }
+
 
 

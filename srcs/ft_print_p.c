@@ -6,25 +6,11 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:13:38 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 20:01:36 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/22 09:28:14 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-void	ft_putnbr_base_ptr(unsigned long long int nb)
-{
-	char	*base;
-
-	base = "0123456789abcdef";
-	if (nb >= 16)
-	{
-		ft_putnbr_base_ptr(nb / 16);
-		write(1, &base[nb % 16], 1);
-	}
-	else
-		write(1, &base[nb], 1);
-}
 
 int	ft_print_p(va_list args)
 {
@@ -34,8 +20,8 @@ int	ft_print_p(va_list args)
 	if (addr)
 	{
 		ft_putstr("0x");
-		ft_putnbr_base_ptr(addr);
-		return ((ft_base_len_ptr(addr) + 2));
+		ft_putnbr_base(addr, "0123456789abcdef");
+		return (ft_len_num_base(addr, 16) + 2);
 	}
 	ft_putstr("(nil)");
 	return (5);

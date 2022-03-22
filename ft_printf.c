@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/21 04:13:07 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/21 18:02:46 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ int	ft_call_function(const char c, va_list args)
 	else if (c == 'p')
 		sum = ft_print_p(args);
 	else if (c == 'd')
-		sum = ft_print_d(args);
+		sum = ft_print_id(args);
 	else if (c == 'i')
-		sum = ft_print_i(args);
+		sum = ft_print_id(args);
 	else if (c == 'u')
 		sum = ft_print_u(args);
 	else if (c == 'x')

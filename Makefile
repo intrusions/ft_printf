@@ -1,5 +1,5 @@
-SRCS		=	srcs/ft_print_c.c srcs/ft_print_s.c srcs/ft_print_p.c srcs/ft_print_d.c \
-				srcs/ft_print_i.c srcs/ft_print_u.c srcs/ft_print_x.c srcs/ft_print_X.c \
+SRCS		=	srcs/ft_print_c.c srcs/ft_print_s.c srcs/ft_print_p.c srcs/ft_print_id.c \
+				srcs/ft_print_u.c srcs/ft_print_x.c srcs/ft_print_X.c \
 				srcs/ft_print_percent.c srcs/utils.c srcs/ft_len.c ft_printf.c
 
 OBJS		=	$(SRCS:.c=.o)

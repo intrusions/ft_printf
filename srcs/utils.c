@@ -6,7 +6,7 @@
 /*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:45:03 by xel               #+#    #+#             */
-/*   Updated: 2022/03/19 20:05:29 by xel              ###   ########.fr       */
+/*   Updated: 2022/03/22 09:21:40 by xel              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,15 @@ void	ft_putnbr(int n)
 	}
 	else
 		ft_putchar(nbr + 48);
+}
+
+void	ft_putnbr_base(unsigned long long int nb, char *base)
+{
+	if (nb >= 16)
+	{
+		ft_putnbr_base(nb / 16, base);
+		write(1, &base[nb % 16], 1);
+	}
+	else
+		write(1, &base[nb], 1);
 }
