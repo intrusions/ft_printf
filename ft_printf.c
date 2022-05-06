@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/05/06 16:27:07 by jucheval         ###   ########.fr       */
+/*   Created: 2022/05/06 16:32:15 by jucheval          #+#    #+#             */
+/*   Updated: 2022/05/06 16:36:23 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ int	ft_call_function(const char c, va_list args)
 		return(ft_print_s(args));
 	else if (c == 'p')
 		return(ft_print_p(args));
-	else if (c == 'd')
-		return(ft_print_id(args));
-	else if (c == 'i')
+	else if (c == 'd' || c == 'i')
 		return(ft_print_id(args));
 	else if (c == 'u')
 		return(ft_print_u(args));
