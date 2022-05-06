@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: xel <xel@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: jucheval <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 09:13:25 by xel               #+#    #+#             */
-/*   Updated: 2022/03/21 18:02:46 by xel              ###   ########.fr       */
+/*   Updated: 2022/05/06 16:27:07 by jucheval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,25 @@ int	ft_check_ifprint(const char c)
 
 int	ft_call_function(const char c, va_list args)
 {
-	int	sum;
-
-	sum = 0;
 	if (c == 'c')
-		sum = ft_print_c(args);
+		return(ft_print_c(args));
 	else if (c == 's')
-		sum = ft_print_s(args);
+		return(ft_print_s(args));
 	else if (c == 'p')
-		sum = ft_print_p(args);
+		return(ft_print_p(args));
 	else if (c == 'd')
-		sum = ft_print_id(args);
+		return(ft_print_id(args));
 	else if (c == 'i')
-		sum = ft_print_id(args);
+		return(ft_print_id(args));
 	else if (c == 'u')
-		sum = ft_print_u(args);
+		return(ft_print_u(args));
 	else if (c == 'x')
-		sum = ft_print_x(args);
+		return(ft_print_x(args));
 	else if (c == 'X')
-		sum = ft_print_x_caps(args);
+		return(ft_print_x_caps(args));
 	else if (c == '%')
-		sum = ft_print_percent();
-	return (sum);
+		return(ft_print_percent());
+	return (0);
 }
 
 int	ft_printf(const char *str, ...)

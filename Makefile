@@ -38,5 +38,5 @@ re:		fclean $(NAME)
 .PHONY:		all clean fclean re bonus
 
 #compile and creat an executable with a test main
-#$(NAME):
-#	$(CC) $(CFLAGS) $(SRCS) main_tester.c -o $(NAME) 
+test:
+	$(CC) $(CFLAGS) $(SRCS) main_tester.c -o $(NAME) 
